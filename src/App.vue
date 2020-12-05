@@ -246,41 +246,23 @@
 
 <script>
 import TeamCard from './components/TeamCard.vue'
+import axios from 'axios'
 
 export default {
   components: { TeamCard },
   name: 'App',
   data() {
     return {
-      members: [{
-        codigo: 1,
-        nombre: 'Manuel Mosquera',
-        descripcion: 'Administrador de empresas apasionado por la programación y el parkour. Tengo 26 años.',
-        rol: 'Desarrollador',
-        image: '/images/ManuelMosquera.jpg'
-      },{
-        codigo: 2,
-        nombre: 'Andrés Restrepo',
-        descripcion: 'Ingeniero de Telecomunicaciones de la Universidad de Antioquia amante al fútbol, la lectura, la cerveza y la programación. Tengo 30 años.',
-        rol: 'Desarrollador',
-        image: '/images/andres.jpeg'
-      },{
-        codigo: 3,
-        nombre: 'Clara Ines Marín',
-        descripcion: `Clara Ines Marín
-                    Lic Biología y Química
-                    Universidad del Valle
-                    Disfruto de la música, el teatro, la lectura.`,
-        rol: 'Desarrollador',
-        image: '/images/ClaraMarin.jpg'
-      },{
-        codigo: 4,
-        nombre: 'Luis Parrado',
-        descripcion: 'Matemático, Universidad Nacional, apasionado por la programación, los viajes y la música.',
-        rol: 'Desarrollador',
-        image: '/images/LuisParrado.jpg'
-      }]
-  }
+      members: []
+    }
+  },
+  created() {
+    axios.get('members.json')
+      .then(datos => {
+        this.members = datos.data
+      }).catch(error => {
+        console.log('No se pudieron cargar los datos de los miembros de equipo.', error)
+      })
   }
 }
 </script>
