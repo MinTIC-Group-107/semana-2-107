@@ -68,86 +68,25 @@
 
 
         <!-- Inicio sección de noticias -->
-        <div id="news" class="mb-3">
-          <h2 class="text-center mb-3">Noticias</h2>
-          <div class="row row-cols-1 row-cols-md-2">
-            <div class="col mb-2">
-              <div class="card shadow mb-3">
-                <div class="row no-gutters">
-                  <div class="col-lg-5">
-                    <img src="/images/telefonia2.jpg" class="card-img" alt="Telefonia 2">
-                    <div class="card-body">
-                      <h4 class="card-title">Colombianos pueden aplicar desde hoy a portabilidad móvil</h4>
-                    </div>
-                  </div>
-                  <div class="col-lg-7">
-                    <div class="card-body">
-                      <p class="card-text">Los usuarios de servicios móviles en Colombia podrán cambiar de operador sin modificar su número en 24 horas desde este miércoles. Según cifras de la Comisión de Regulación de Comunicaciones (CRC), citadas por Tigo, a corte de junio de 2019 se realizaron cerca de 20,3 millones de portaciones desde 2011, cuando se implementó esta medida.</p>
-                      <hr>
-                      <p class="card-text"><a href="https://www.dinero.com/empresas/confidencias-on-line/articulo/portabilidad-movil-en-un-dia-comienza-este-miercoles-1-de-julio/291188" class="btn btn-link">Leer noticia completa >></a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-              <div class="col mb-2">
-                <div class="card shadow mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-lg-5">
-                      <img src="/images/telefonia1.jpg" class="card-img" alt="Telefonia 1">
-                      <div class="card-body">
-                        <h4 class="card-title">Google anunciará en voz alta quién está llamando</h4>
-                      </div>
-                    </div>
-                    <div class="col-lg-7">
-                      <div class="card-body">
-                        <p class="card-text">Google está probando nuevas funciones en su aplicación Teléfono de Google, para identificar en voz alta el nombre la persona que llama, sin necesidad así de tener que mirar la pantalla. Asimismo, Teléfono de Google prueba también otras novedades como la posibilidad de borrar automáticamente, después de 30 días, ...</p>
-                        <hr>
-                        <p class="card-text"><a href="https://www.dinero.com/empresas/confidencias-on-line/articulo/google-se-prepara-para-que-su-telefono-anuncie-en-voz-alta-quien-llama/301925" class="btn btn-link">Leer noticia completa >></a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col mb-2">
-                <div class="card shadow mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-lg-5">
-                      <img src="/images/telefonia3.jpg" class="card-img" alt="Telefonia 3">
-                      <div class="card-body">
-                        <h4 class="card-title">¿Qué están haciendo los operadores para evitar un colapso en la red?</h4>
-                      </div>
-                    </div>
-                    <div class="col-lg-7">
-                      <div class="card-body">
-                        <p class="card-text">Empresas de telecomunicaciones ya adoptaron medidas en sus servicios de red por el coronavirus.</p>
-                        <p class="card-text">Este viernes se inició el simulacro de cuarentena en Bogotá y también en diferentes regiones del país. Y ya desde hace algunas semanas miles de trabajadores empezaron a trabajar de forma remota desde sus casas. Esto, sin dudas, hace que el número de usuarios en simultáneo que están conectados a la red aumente.</p>
-                        <hr>
-                        <p class="card-text"><a href="https://www.eltiempo.com/tecnosfera/novedades-tecnologia/coronavirus-como-esta-funcionando-el-internet-en-colombia-por-teletrabajo-475240" class="btn btn-link">Leer noticia completa >></a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col mb-2">
-                <div class="card shadow mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-lg-5">
-                      <img src="/images/television.jpg" class="card-img" alt="Televisión">
-                      <div class="card-body">
-                        <h4 class="card-title">Así creció el consumo de televisión en Colombia en 2020</h4>
-                      </div>
-                    </div>
-                    <div class="col-lg-7">
-                      <div class="card-body">
-                        <p class="card-text">El consumo de televisión en Colombia ha sido más alto en 2020 que el registrado en 2019, según reveló el estudio de audiencias de Kantar Ibope Media sobre el rating y consumo de ese medio. En agosto del año pasado los colombianos veían un promedio de 4 horas 14 minutos, mientras que en ese mismo mes de este año ven 4 horas 41 minutos, es decir 27 minutos más de televisión...</p>
-                        <hr>
-                        <p class="card-text"><a href="https://www.dinero.com/noticias/television/417" class="btn btn-link">Leer noticia completa >></a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div id="news" class="mb-3 mt-3">
+          <h2 class="text-center mb-3">Últimas noticias de Colombia</h2>
+
+          <!-- Select de categorías -->
+          <div class="col-md-8 mx-auto mb-3">
+            <div class="d-flex justify-content-between align-items-baseline">
+              <label for="category" class="mb-2 mr-sm-2">Categoría: </label>
+              <select id="category" class="custom-select mb-2" v-model="category" @change="loadNews">
+                <option v-for="category in categories" :key="category.value" :value="category.value">{{ category.name }}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Cards con las 4 categorías de noticias -->
+          <div class="row row-cols-1 row-cols-md-2" v-if="news.length">
+            <news-card :item="news[0]" />
+            <news-card :item="news[1]" />
+            <news-card :item="news[2]" />
+            <news-card :item="news[3]" />
           </div>
         </div>
         <!-- Fin seccion de noticias -->
@@ -192,23 +131,51 @@ import MisServicios from './components/MisServicios.vue'
 import ServiciosTele from './components/ServiciosTele.vue'
 import FooterMember from './components/FooterMember'
 import TeamCard from './components/TeamCard.vue'
+import NewsCard from './components/NewsCard'
+
 import axios from 'axios'
 
 export default {
-  components: { TeamCard, FooterMember, MisServicios, ServiciosTele },
+  components: { TeamCard, FooterMember, MisServicios, ServiciosTele, NewsCard },
   name: 'App',
   data() {
     return {
-      members: []
+      members: [],
+      news: [],
+      category: 'technology',
+      categories: [
+        { value: "science", name: "Ciencia" },
+        { value: "sports", name: "Deportes" },
+        { value: "entertainment", name: "Entretenimiento" },
+        { value: "general", name: "General" },
+        { value: "business", name: "Negocios" },
+        { value: "health", name: "Salud" },
+        { value: "technology", name: "Tecnología" }
+      ]
     }
   },
   created() {
     axios.get('members.json')
       .then(datos => {
         this.members = datos.data
+        this.loadNews()
       }).catch(error => {
         console.log('No se pudieron cargar los datos de los miembros de equipo.', error)
       })
+  },
+  methods: {
+    loadNews() {
+      let apiKey = process.env.VUE_APP_API_NEWS_KEY;
+      let url = `https://newsapi.org/v2/top-headlines?country=co&category=${this.category}&apiKey=${apiKey}`
+
+      axios.get(url)
+        .then(response => {
+          this.news = response.data.articles
+        })
+        .catch(error => {
+          console.log('Hubo un problema cargando las noticias desde la API.', error)
+        })
+    }
   }
 }
 </script>
