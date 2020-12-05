@@ -219,20 +219,9 @@
             <a href="https://github.com/MinTIC-Group-107/sprint1-bootstrap" class="btn btn-outline-light"><i class="fab fa-github"></i> Ver en GitHub</a>
           </div>
           <div class="col-md-6">
-            <h4 class="footer-members-title">Contacto</h4>
+            <h4>Contacto</h4>
             <ul>
-              <li>
-                <strong>Manuel Mosquera: </strong> <a href="mailto:mosquera.manuel2011@gmail.com" class="text-warning"><i>mosquera.manuel2011@gmail.com</i></a>
-              </li>
-              <li>
-                <strong>Andrés Restrepo: </strong> <a href="mailto:restrepo.ingeniero2018@gmail.com" class="text-warning"><i>restrepo.ingeniero2018@gmail.com</i></a>
-              </li>
-              <li>
-                <strong>Clara Inés Marín: </strong> <a href="mailto:claramarmfs@gmail.com" class="text-warning"><i>claramarmfs@gmail.com</i></a>
-              </li>
-              <li>
-                <strong>Luis Antonio Parrado: </strong> <a href="mailto:luisprmat@gmail.com" class="text-warning"><i>luisprmat@hotmail.com</i></a>
-              </li>
+              <footer-member v-for="member in members" :key="member.codigo" :member="member"/>
             </ul>
           </div>
         </div>
@@ -245,11 +234,12 @@
 </template>
 
 <script>
+import FooterMember from './components/FooterMember'
 import TeamCard from './components/TeamCard.vue'
 import axios from 'axios'
 
 export default {
-  components: { TeamCard },
+  components: { TeamCard, FooterMember },
   name: 'App',
   data() {
     return {
