@@ -201,54 +201,8 @@
         <!-- Inicio sección de Equipo -->
         <div id="team" class="mb-3">
           <h2 class="text-center mb-3">Nuestro equipo</h2>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="card text-left shadow mb-2">
-                <img class="card-img-top" src="/images/ManuelMosquera.jpg" alt="Manuel Mosquera">
-                <div class="card-body">
-                  <h4 class="card-title">Manuel Mosquera</h4>
-                  <p class="card-text">
-                    Administrador de empresas apasionado por la programación y el parkour.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card text-left shadow mb-2">
-                <img class="card-img-top" src="/images/andres.jpeg" alt="Andrés Restrepo">
-                <div class="card-body">
-                  <h4 class="card-title">Andrés Restrepo</h4>
-                  <p class="card-text">
-                    Ingeniero de Telecomunicaciones de la Universidad de Antioquia amante al fútbol, la lectura, la cerveza y la programación. Tengo 30 años.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card text-left shadow mb-2">
-                <img class="card-img-top" src="/images/ClaraMarin.jpg" alt="Clara Marín">
-                <div class="card-body">
-                  <h4 class="card-title">Clara Marín</h4>
-                  <p class="card-text">
-                    Clara Ines Marín <br>
-                    Lic Biología y Química <br>
-                    Universidad del Valle <br>
-                    Disfruto de la música, el teatro, la lectura.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="card text-left shadow mb-2">
-                <img class="card-img-top" src="/images/LuisParrado.jpg" alt="Luis Parrado">
-                <div class="card-body">
-                  <h4 class="card-title">Luis Parrado</h4>
-                  <p class="card-text">
-                    Matemático, Universidad Nacional, apasionado por la programación, los viajes y la música.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="row" >
+            <team-card v-for="member in members" v-bind:key="member.codigo" v-bind:member="member"></team-card>
           </div>
         </div>
         <!-- Fin sección de equipo -->
@@ -291,9 +245,25 @@
 </template>
 
 <script>
+import TeamCard from './components/TeamCard.vue'
+import axios from 'axios'
 
 export default {
+  components: { TeamCard },
   name: 'App',
+  data() {
+    return {
+      members: []
+    }
+  },
+  created() {
+    axios.get('members.json')
+      .then(datos => {
+        this.members = datos.data
+      }).catch(error => {
+        console.log('No se pudieron cargar los datos de los miembros de equipo.', error)
+      })
+  }
 }
 </script>
 
