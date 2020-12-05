@@ -15,7 +15,7 @@
             <a class="nav-link" href="#services">Servicios</a>
           </li>
           <li class="nav-item">
-         TeamCard   <a class="nav-link" href="#news">Noticias</a>
+            <a class="nav-link" href="#news">Noticias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#team">Equipo</a>
@@ -267,9 +267,9 @@ export default {
       },{
         codigo: 3,
         nombre: 'Clara Ines Marín',
-        descripcion: `Clara Ines Marín <br>
-                    Lic Biología y Química <br>
-                    Universidad del Valle <br>
+        descripcion: `Clara Ines Marín
+                    Lic Biología y Química
+                    Universidad del Valle
                     Disfruto de la música, el teatro, la lectura.`,
         rol: 'Desarrollador',
         image: '/images/ClaraMarin.jpg'

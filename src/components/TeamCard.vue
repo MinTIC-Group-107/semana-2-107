@@ -8,6 +8,9 @@
                     {{member.descripcion}}
                 </p>
                 <p class="card-text">
+                    Código: {{member.codigo}}
+                </p>
+                <p class="card-text">
                     {{member.rol}}
                 </p>
             </div>
