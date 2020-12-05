@@ -77,7 +77,7 @@
                   <div class="col-lg-5">
                     <img src="/images/telefonia2.jpg" class="card-img" alt="Telefonia 2">
                     <div class="card-body">
-                      <h4 class="card-title">Colombian-os pueden aplicar desde hoy a portabilidad móvil</h4>
+                      <h4 class="card-title">Colombianos pueden aplicar desde hoy a portabilidad móvil</h4>
                     </div>
                   </div>
                   <div class="col-lg-7">
