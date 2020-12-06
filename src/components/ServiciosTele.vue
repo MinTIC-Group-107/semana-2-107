@@ -10,7 +10,7 @@
                     <div class="col-md-4">
                         <div class="card text-left shadow-sm mb-2">
                             <a href="https://www.claro.com.co/personas/servicios/servicios-moviles/">
-                                    <img class="card-img-top" alt="Telefonía móvil" src="/images/mobil.png">
+                                    <img class="card-img-top" alt="Telefonía móvil" src="../assets/images/mobil.png">
                                 <!-- <img :src="require('./assets/mobil.png')" alt=""> -->
                                 <!-- <v-img src="@/assets/mobil.png"></v-img> -->
 
@@ -34,7 +34,7 @@
                     <div class="col-md-4">
                         <div class="card text-left shadow-sm mb-2">
                             <a href="https://www.movistar.co/planes-de-internet/">
-                                     <img class="card-img-top" src="/images/internet.png" alt="Internet Hogar">
+                                     <img class="card-img-top" src="../assets/images/internet.png" alt="Internet Hogar">
                                 <!-- <img :src="require('./assets/internet.png')" alt=""> -->
                                 <!-- <v-img src="@/assets/mobil.png"></v-img> -->
 
@@ -57,7 +57,7 @@
                     <div class="col-md-4">
                         <div class="card text-left shadow-sm">
                             <a href="https://www.tigo.com.co/servicios/television">
-                                     <img class="card-img-top" src="/images/tv.png" alt="Televisión">
+                                     <img class="card-img-top" src="../assets/images/tv.png" alt="Televisión">
                                 <!-- <img :src="require('./assets/tv.png')" alt=""> -->
                                 <!-- <v-img src="@/assets/mobil.png"></v-img> -->
 

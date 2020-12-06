@@ -2,7 +2,7 @@
   <div id="app">
 
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <a class="navbar-brand" href="#"><img src="/images/logo.png" height="40px" alt="Grupo 107"></a>
+      <a class="navbar-brand" href="#"><img src="./assets/images/logo.png" height="40px" alt="Grupo 107"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,17 +38,17 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img src="/images/banner1.jpg" class="d-block w-100" alt="Banner 1">
+            <img src="./assets/images/banner1.jpg" class="d-block w-100" alt="Banner 1">
             <div class="carousel-caption d-none d-md-block">
               <h4>Servicios</h4>
               <p>Convenios con las mejores empresas.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/images/banner2.jpg" class="d-block w-100" alt="Second slide">
+            <img src="./assets/images/banner2.jpg" class="d-block w-100" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img src="/images/banner3.jpg" class="d-block w-100" alt="Third slide">
+            <img src="./assets/images/banner3.jpg" class="d-block w-100" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#bannerId" role="button" data-slide="prev">

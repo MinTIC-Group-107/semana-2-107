@@ -6,7 +6,7 @@
       <template>
         <div class="col-sm-4" v-for="item in info" :key="item.id">
           <div class="card">
-            <img :src="'http://lorempixel.com/350/230/technics/GRUPO-107                                         ' + item.id" alt=""
+            <img :src="'http://lorempixel.com/350/230/technics/GRUPO-107' + item.id" :alt="item.title"
               class="car-img-top">
             <div class="card-body">
               <h5 class="card-title">{{item.title}}</h5>
