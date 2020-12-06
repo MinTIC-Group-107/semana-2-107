@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:mintic-group-107/semana-2-107.git release:release
+git push -f git@github.com:mintic-group-107/semana-2-107.git release:gh-pages
 
 cd -
