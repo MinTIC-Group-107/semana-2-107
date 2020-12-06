@@ -1,0 +1,14 @@
+#team .card {
+  transition: 0.5s;
+}
+
+#team .card:hover {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+#team .card-img-top {
+  width: auto;
+  max-height: 230px;
+  object-fit: cover;
+}
