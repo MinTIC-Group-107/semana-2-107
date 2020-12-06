@@ -1,4 +1,4 @@
-# pryecto_sprint2
+# Proyecto Sprint 2 - Grupo 107
 
 ## Project setup
 ```
