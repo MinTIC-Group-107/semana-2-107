@@ -137,6 +137,7 @@ import TeamCard from './components/TeamCard.vue'
 import NewsCard from './components/NewsCard'
 
 import axios from 'axios'
+import members from './members'
 
 export default {
   components: { TeamCard, FooterMember, MisServicios, ServiciosTele, NewsCard },
@@ -158,13 +159,8 @@ export default {
     }
   },
   created() {
-    axios.get('members.json')
-      .then(datos => {
-        this.members = datos.data
-        this.loadNews()
-      }).catch(error => {
-        console.log('No se pudieron cargar los datos de los miembros de equipo.', error)
-      })
+    this.members = members
+    this.loadNews()
   },
   methods: {
     loadNews() {
