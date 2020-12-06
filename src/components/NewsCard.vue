@@ -12,7 +12,7 @@
         <div class="card-body">
           <p class="card-text">{{ item.content }}</p>
           <hr>
-          <p class="card-text"><a :href="item.url" class="btn btn-link">Leer noticia completa >></a></p>
+          <a :href="item.url" class="btn btn-info">Leer mas ...</a>
         </div>
       </div>
     </div>
