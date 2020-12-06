@@ -4,7 +4,7 @@ const members = [
     nombre: "Manuel Mosquera",
     descripcion: "Administrador de empresas apasionado por la programación y el parkour.",
     rol: "Administrador",
-    image: "./assets/images/ManuelMosquera.jpg",
+    image: "/images/ManuelMosquera.jpg",
     email: "mosquera.manuel2011@gmail.com"
   },
   {
@@ -12,7 +12,7 @@ const members = [
     nombre: "Andrés Restrepo",
     descripcion: "Ingeniero de Telecomunicaciones de la Universidad de Antioquia amante al fútbol, la lectura, la cerveza y la programación. Tengo 30 años.",
     rol: "Desarrollador Backend",
-    image: "./assets/images/andres.jpeg",
+    image: "/images/andres.jpeg",
     email: "restrepo.ingeniero2018@gmail.com"
   },
   {
@@ -20,7 +20,7 @@ const members = [
     nombre: "Clara Marín",
     descripcion: "Clara Ines Marín\n Lic Biología y Química\n Universidad del Valle\n Disfruto de la música, el teatro, la lectura.",
     rol: "Desarrollador Frontend",
-    image: "./assets/images/ClaraMarin.jpg",
+    image: "/images/ClaraMarin.jpg",
     email: "claramarmfs@gmail.com"
   },
   {
@@ -28,7 +28,7 @@ const members = [
     nombre: "Luis Parrado",
     descripcion: "Matemático, Universidad Nacional, apasionado por la programación, los viajes y la música.",
     rol: "Desarrollador FullStack",
-    image: "./assets/images/LuisParrado.jpg",
+    image: "/images/LuisParrado.jpg",
     email: "luisprmat@hotmail.com"
   }
 ]
