@@ -9,20 +9,20 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio</a>
+          <li class="nav-item" :class="isActive('')">
+            <a class="nav-link" href="#" @click="isActive('')">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Servicios</a>
+          <li class="nav-item" :class="isActive('#services')">
+            <a class="nav-link" href="#services" @click="isActive('#services')">Servicios</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#music">Música</a>
+          <li class="nav-item" :class="isActive('#music')">
+            <a class="nav-link" href="#music" @click="isActive('#music')">Música</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#news">Noticias</a>
+          <li class="nav-item" :class="isActive('#news')">
+            <a class="nav-link" href="#news" @click="isActive('#news')">Noticias</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team">Equipo</a>
+          <li class="nav-item" :class="isActive('#team')">
+            <a class="nav-link" href="#team" @click="isActive('#team')">Equipo</a>
           </li>
         </ul>
       </div>
@@ -178,6 +178,9 @@ export default {
         .catch(error => {
           console.log('Hubo un problema cargando las noticias desde la API.', error)
         })
+    },
+    isActive(hash) {
+      return window.location.hash === hash ? 'active' : ''
     }
   }
 }
