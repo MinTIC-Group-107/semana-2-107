@@ -72,19 +72,19 @@
 
         <!-- Inicio sección de noticias -->
         <div id="news" class="mb-3 mt-3">
-          <h2 class="text-center mb-3">Últimas noticias de Colombia</h2>
+          <h2 class="text-center mb-3">Últimas noticias</h2>
 
-          <!-- Select de categorías -->
+          <!-- Select de paises -->
           <div class="col-md-8 mx-auto mb-3">
             <div class="d-flex justify-content-between align-items-baseline">
-              <label for="category" class="mb-2 mr-sm-2">Categoría: </label>
-              <select id="category" class="custom-select mb-2" v-model="category" @change="loadNews">
-                <option v-for="category in categories" :key="category.value" :value="category.value">{{ category.name }}</option>
+              <label for="country" class="mb-2 mr-sm-2">Pais: </label>
+              <select id="country" class="custom-select mb-2" v-model="country" @change="loadNews">
+                <option v-for="country in countries" :key="country.value" :value="country.value">{{ country.name }}</option>
               </select>
             </div>
           </div>
 
-          <!-- Cards con las 4 categorías de noticias -->
+          <!-- Cards con las 4 paises de noticias -->
           <div class="row row-cols-1 row-cols-md-2" v-if="news.length">
             <news-card :item="news[0]" />
             <news-card :item="news[1]" />
@@ -146,15 +146,19 @@ export default {
     return {
       members: [],
       news: [],
-      category: 'technology',
-      categories: [
-        { value: "science", name: "Ciencia" },
-        { value: "sports", name: "Deportes" },
-        { value: "entertainment", name: "Entretenimiento" },
-        { value: "general", name: "General" },
-        { value: "business", name: "Negocios" },
-        { value: "health", name: "Salud" },
-        { value: "technology", name: "Tecnología" }
+      country: 'co',
+      countries: [
+        { value: "ar", name: "Argentina" },
+        { value: "br", name: "Brasil" },
+        { value: "ca", name: "Canadá" },
+        { value: "co", name: "Colombia" },
+        { value: "cl", name: "Chile" },
+        { value: "cn", name: "China" },
+        { value: "ec", name: "Ecuador" },
+        { value: "es", name: "España" },
+        { value: "us", name: "Estados Unidos" },
+        { value: "mx", name: "México" },
+        { value: "ve", name: "Venezuela" }
       ]
     }
   },
@@ -164,12 +168,12 @@ export default {
   },
   methods: {
     loadNews() {
-      let apiKey = '3e281e58ca59401597a5d7342ea4e1c7';
-      let url = `https://newsapi.org/v2/top-headlines?country=co&category=${this.category}&apiKey=${apiKey}`
+      let apiKey = process.env.VUE_APP_API_NEWS_KEY;
+      let url = `http://api.mediastack.com/v1/news?access_key=${apiKey}&countries=${this.country}`
 
       axios.get(url)
         .then(response => {
-          this.news = response.data.articles
+          this.news = response.data.data
         })
         .catch(error => {
           console.log('Hubo un problema cargando las noticias desde la API.', error.response.data)

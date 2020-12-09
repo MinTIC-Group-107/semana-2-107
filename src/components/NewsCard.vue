@@ -3,14 +3,14 @@
   <div class="card shadow mb-3">
     <div class="row no-gutters">
       <div class="col-lg-7">
-        <img :src="item.urlToImage" class="card-img" :alt="item.title" v-if="item.urlToImage">
+        <img :src="item.image" class="card-img" :alt="item.title" v-if="item.image">
         <div class="card-body">
           <h5 class="card-title">{{ item.title }}</h5>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="card-body">
-          <p class="card-text">{{ item.content }}</p>
+          <p class="card-text">{{ item.description }}</p>
           <hr>
           <a :href="item.url" class="btn btn-info">Leer mas ...</a>
         </div>
