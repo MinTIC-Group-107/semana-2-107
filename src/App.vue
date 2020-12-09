@@ -112,7 +112,7 @@
           <div class="col-md-6">
             <h4 class="footer-info-title">Grupo 107</h4>
             <p>Este sitio ofrece servicios desde el área de las telecomunicaciones en convenio con las mejores empresas del sector, y se enfoca en brindar un excelente servicio al cliente y es desarrollado por nuestro equipo.</p>
-            <a href="https://github.com/MinTIC-Group-107/sprint1-bootstrap" class="btn btn-outline-light"><i class="fab fa-github"></i> Ver en GitHub</a>
+            <a href="https://github.com/MinTIC-Group-107/semana-2-107" class="btn btn-outline-light"><i class="fab fa-github"></i> Ver en GitHub</a>
           </div>
           <div class="col-md-6">
             <h4>Contacto</h4>
